@@ -16,7 +16,7 @@ public class VCoreBarChart: BarChartCore {
             scrollView.contentSize = CGSize(width: ((displayConfig.barWidth)! + (displayConfig.barSpace)! + 2)*CGFloat(entries.count), height: self.frame.size.height)
             mainLayer.frame = CGRect(x: 0, y: 0, width: scrollView.contentSize.width, height: scrollView.contentSize.height)
             
-            drawHorizontalLines(entries: entries)
+//            drawHorizontalLines(entries: entries)
             
             
             for i in 0..<entries.count {
