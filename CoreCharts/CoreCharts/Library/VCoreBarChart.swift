@@ -11,12 +11,12 @@ public class VCoreBarChart: BarChartCore {
     private var bottomPosition: CGFloat = 0
     
     override func onCreate(entries: [CoreChartEntry]) {
-                        
+        
         if entries.count > 0 {
             scrollView.contentSize = CGSize(width: ((displayConfig.barWidth)! + (displayConfig.barSpace)! + 2)*CGFloat(entries.count), height: self.frame.size.height)
             mainLayer.frame = CGRect(x: 0, y: 0, width: scrollView.contentSize.width, height: scrollView.contentSize.height)
             
-//            drawHorizontalLines(entries: entries)
+            //            drawHorizontalLines(entries: entries)
             
             
             for i in 0..<entries.count {
@@ -27,7 +27,7 @@ public class VCoreBarChart: BarChartCore {
             
         }
     }
-   
+    
     
     private func showEntry(index: Int, entry: CoreChartEntry) {
         
@@ -35,12 +35,12 @@ public class VCoreBarChart: BarChartCore {
         let xPos: CGFloat = (displayConfig.barSpace)! + CGFloat(index) * ((displayConfig.barWidth)! + (displayConfig.barSpace)!)
         
         /// Starting y postion of the bar
-        let yPos: CGFloat = translateHeightValueToYPosition(value: Float(entry.barHeight))
-                
+        let yPos: CGFloat = translateHeightValueToYPosition(value: Float(entry.barHeight)) - 10
+        
         drawBar(xPos: xPos, yPos: yPos, entry: entry)
         
         /// Draw text above the bar
-//        drawTextValue(xPos: xPos, yPos: yPos, textValue: entry.barHeightText, color: entry.barColor)
+        //        drawTextValue(xPos: xPos, yPos: yPos, textValue: entry.barHeightText, color: entry.barColor)
         
         /// Draw text below the bar
         drawTitle(xPos: xPos, yPos: bottomPosition, title: entry.barTitle, color: entry.barColor)
@@ -50,10 +50,10 @@ public class VCoreBarChart: BarChartCore {
         let barLayer = CALayer()
         barLayer.cornerRadius = 2
         barLayer.backgroundColor = entry.barColor.cgColor
-
+        
         barLayer.frame = CGRect(
             x: xPos,
-            y: yPos + valueTextHeight,
+            y: yPos + valueTextHeight - 10,
             width: (displayConfig.barWidth)!,
             height: ((scrollView.frame.height - (displayConfig.bottomSpace)!)) - yPos - valueTextHeight
         )
@@ -67,7 +67,7 @@ public class VCoreBarChart: BarChartCore {
         }
         
     }
-   
+    
     
     private func drawHorizontalLines(entries: [CoreChartEntry]) {
         
@@ -103,7 +103,7 @@ public class VCoreBarChart: BarChartCore {
         shapeLayerLine.lineWidth = 0.5
         
         let pathLine = CGMutablePath()
-        pathLine.addLines(between: [CGPoint(x: 0, y: bottomPosition),CGPoint(x: frame.maxX, y: bottomPosition)])
+        pathLine.addLines(between: [CGPoint(x: 0, y: bottomPosition - 10),CGPoint(x: frame.maxX, y: bottomPosition - 10)])
         
         shapeLayerLine.path = pathLine
         
@@ -123,7 +123,7 @@ public class VCoreBarChart: BarChartCore {
         
         textLayer.frame = CGRect(
             x: xPos + (((displayConfig.barWidth)! / 2) - textSize.width / 2),
-            y: yPos,
+            y: yPos - 10,
             width: textSize.width,
             height: textSize.height
         )
@@ -151,7 +151,7 @@ public class VCoreBarChart: BarChartCore {
         
         textLayer.frame = CGRect(
             x: xPos + (((displayConfig.barWidth)! / 2) - textSize.width / 2) ,
-            y: yPos,
+            y: yPos + 5 - 10,
             width: textSize.width,
             height: textSize.height
         )
