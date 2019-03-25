@@ -40,7 +40,7 @@ public class VCoreBarChart: BarChartCore {
         drawBar(xPos: xPos, yPos: yPos, entry: entry)
         
         /// Draw text above the bar
-        drawTextValue(xPos: xPos, yPos: yPos, textValue: entry.barHeightText, color: entry.barColor)
+//        drawTextValue(xPos: xPos, yPos: yPos, textValue: entry.barHeightText, color: entry.barColor)
         
         /// Draw text below the bar
         drawTitle(xPos: xPos, yPos: bottomPosition, title: entry.barTitle, color: entry.barColor)

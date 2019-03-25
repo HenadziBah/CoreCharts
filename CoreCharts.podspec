@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CoreCharts"
-  s.version      = "1.0.4"
+  s.version      = "1.0.9"
   s.summary      = "Elegant way to use Graph Charts on Apple ecosystem with CoreCharts"
 
   # This description is used to generate tags and improve search results.
