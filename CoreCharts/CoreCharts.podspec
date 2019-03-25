@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/cagricolak/CoreCharts.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/HenadziBah/CoreCharts.git", :tag => "#{s.version}" }
   s.swift_version = "4.1"
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
