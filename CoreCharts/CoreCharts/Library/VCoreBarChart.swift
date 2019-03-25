@@ -156,7 +156,7 @@ public class VCoreBarChart: BarChartCore {
             height: textSize.height
         )
         
-        textLayer.foregroundColor = color.cgColor
+        textLayer.foregroundColor = #colorLiteral(red: 0.5333333333, green: 0.6156862745, blue: 0.6980392157, alpha: 1)
         
         textLayer.backgroundColor = UIColor.clear.cgColor
         textLayer.alignmentMode = kCAAlignmentCenter
