@@ -35,7 +35,7 @@ public class VCoreBarChart: BarChartCore {
         let xPos: CGFloat = (displayConfig.barSpace)! + CGFloat(index) * ((displayConfig.barWidth)! + (displayConfig.barSpace)!)
         
         /// Starting y postion of the bar
-        let yPos: CGFloat = translateHeightValueToYPosition(value: Float(entry.barHeight)) - 10
+        let yPos: CGFloat = translateHeightValueToYPosition(value: Float(entry.barHeight)) - 3
         
         drawBar(xPos: xPos, yPos: yPos, entry: entry)
         
@@ -53,7 +53,7 @@ public class VCoreBarChart: BarChartCore {
         
         barLayer.frame = CGRect(
             x: xPos,
-            y: yPos + valueTextHeight - 10,
+            y: yPos + valueTextHeight - 3,
             width: (displayConfig.barWidth)!,
             height: ((scrollView.frame.height - (displayConfig.bottomSpace)!)) - yPos - valueTextHeight
         )
@@ -103,7 +103,7 @@ public class VCoreBarChart: BarChartCore {
         shapeLayerLine.lineWidth = 0.5
         
         let pathLine = CGMutablePath()
-        pathLine.addLines(between: [CGPoint(x: 0, y: bottomPosition - 10),CGPoint(x: frame.maxX, y: bottomPosition - 10)])
+        pathLine.addLines(between: [CGPoint(x: 0, y: bottomPosition - 3),CGPoint(x: frame.maxX, y: bottomPosition - 3)])
         
         shapeLayerLine.path = pathLine
         
@@ -123,7 +123,7 @@ public class VCoreBarChart: BarChartCore {
         
         textLayer.frame = CGRect(
             x: xPos + (((displayConfig.barWidth)! / 2) - textSize.width / 2),
-            y: yPos - 10,
+            y: yPos - 3,
             width: textSize.width,
             height: textSize.height
         )
@@ -151,7 +151,7 @@ public class VCoreBarChart: BarChartCore {
         
         textLayer.frame = CGRect(
             x: xPos + (((displayConfig.barWidth)! / 2) - textSize.width / 2) ,
-            y: yPos + 5 - 10,
+            y: yPos,
             width: textSize.width,
             height: textSize.height
         )
